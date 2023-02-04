@@ -1,7 +1,7 @@
-Large language model (LLM) examples
+Applied Examples of Large Language Models (LLM) 
 ---------
 
-LLM are incredible poweful. Here are examples of common usecases.
+LLM are incrediblely poweful and pratical. Here are examples of common applied usecases.
 
 Examples:
 
