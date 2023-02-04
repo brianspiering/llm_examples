@@ -1,10 +1,12 @@
 """
-A command line chatbot with a Hugging Face's model
+A command line chatbot using a Hugging Face model
 """
 
 import torch
-from transformers import AutoModelForCausalLM, AutoTokenizer
+from transformers import AutoModelForCausalLM, AutoTokenizer, logging
 
+
+logging.set_verbosity(50) # Only log critical issues
 
 tokenizer = AutoTokenizer.from_pretrained("microsoft/DialoGPT-medium", padding_side="left")
 model = AutoModelForCausalLM.from_pretrained("microsoft/DialoGPT-medium")
@@ -13,6 +15,7 @@ max_look_back_len = 1_000
 chat_history_ids = None
 
 if __name__ == "__main__":
+
 	print("Type 'Q' to quit.")
 
 	while True:
