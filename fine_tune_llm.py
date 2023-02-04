@@ -5,11 +5,11 @@ Fine tune large language model (LLM) on local data.
 from datasets     import load_dataset
 from transformers import AutoModelForCausalLM, AutoTokenizer, DataCollatorForLanguageModeling, pipeline, TrainingArguments, Trainer
 
+
 def tokenize_function(examples):
     return tokenizer(examples["text"],
                     padding="max_length",
                     truncation=True)
-
 
 dataset = load_dataset(path="data/", data_files="input.txt")
 tokenizer = AutoTokenizer.from_pretrained("bert-base-cased")
