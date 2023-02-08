@@ -39,6 +39,7 @@ trainer = Trainer(
 
 trainer.train()
 
+# After training, evaluate
 pipe = pipeline(
     "text-generation", 
     model=model,

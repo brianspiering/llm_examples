@@ -11,7 +11,7 @@ logging.set_verbosity(50) # Only log critical issues
 tokenizer = AutoTokenizer.from_pretrained("microsoft/DialoGPT-medium", padding_side="left")
 model = AutoModelForCausalLM.from_pretrained("microsoft/DialoGPT-medium")
 
-max_look_back_len = 1_000 
+max_new_tokens = 20 
 chat_history_ids = None
 
 if __name__ == "__main__":
@@ -33,7 +33,7 @@ if __name__ == "__main__":
 			bot_input_ids = torch.cat([chat_history_ids, new_user_input_ids], dim=-1) 
 		
 		chat_history_ids = model.generate(bot_input_ids, 
-										  max_length=max_look_back_len, 
+										  max_new_tokens=max_new_tokens, 
 										  pad_token_id=tokenizer.eos_token_id)
 		response = tokenizer.decode(chat_history_ids[:, bot_input_ids.shape[-1]:][0], 
 									skip_special_tokens=True)
