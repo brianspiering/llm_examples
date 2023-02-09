@@ -46,5 +46,7 @@ pipe = pipeline(
     tokenizer=tokenizer
 )
 
-prompt = "What color are pandas?"
-print(pipe(prompt, num_return_sequences=1, max_new_tokens=3)[0]["generated_text"])
+if __name__ == '__main__':
+
+    prompt = input("Please provide prompt for AI model: ")
+    print(pipe(prompt, num_return_sequences=1, max_new_tokens=3)[0]["generated_text"])
