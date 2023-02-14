@@ -1,9 +1,9 @@
 Applied Examples of Large Language Models (LLM) 
 ---------
 
-LLM are incrediblely poweful and pratical. Here are examples of common applied usecases.
+LLM are incrediblely powerful and pratical. 
 
-Examples:
+Examples of common applied usecases:
 
 - [Fine tuning a LLM with new data](fine_tune_llm.py)
 - [Chatbot](chatbot.py)
