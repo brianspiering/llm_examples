@@ -1,4 +1,4 @@
-Applied Examples of Large Language Models (LLM) 
+Examples of Applying Large Language Models (LLM) 
 ---------
 
 LLM are incrediblely powerful and pratical. 
