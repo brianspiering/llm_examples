@@ -1,5 +1,13 @@
 """
 Fine tune large language model (LLM) on local data.
+
+Uses PyTorch / HuggingFace
+
+Steps:
+1. Load local data
+2. Tokenize
+3. Fine-tune
+4. Evaluate
 """
 
 from datasets     import load_dataset
@@ -37,16 +45,16 @@ trainer = Trainer(
     data_collator=data_collator,
 )
 
+# Fine tune model
+print("Model is fine-tuning")
 trainer.train()
 
-# After training, evaluate
+# Evaluate model
 pipe = pipeline(
     "text-generation", 
     model=model,
     tokenizer=tokenizer
 )
 
-if __name__ == '__main__':
-
-    prompt = input("Please provide prompt for AI model: ")
-    print(pipe(prompt, num_return_sequences=1, max_new_tokens=3)[0]["generated_text"])
+prompt = input("Please provide prompt for fine-tuned AI model: ")
+print(pipe(prompt, num_return_sequences=1, max_new_tokens=3)[0]["generated_text"])
