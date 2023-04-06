@@ -12,11 +12,11 @@ ai.api_key = os.getenv("OPENAI_API_KEY")
 
 def generate_gpt3_response(prompt: str, max_tokens: int=35) -> str:
     """
-    Query OpenAI GPT-3 to get response.
+    Query OpenAI API to get response.
     """
 
     response = ai.Completion.create(
-        engine='text-davinci-003',  
+        engine='text-davinci-003',  # GPT-3
         temperature=0.5,            
         prompt=prompt,           
         max_tokens=max_tokens,    
